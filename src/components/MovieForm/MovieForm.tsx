@@ -1,6 +1,6 @@
     import React, { useState } from 'react';
-    import MovieItem from './MovieItem';
     import { Movies } from '../../types';
+    import MovieItem from './MemoMovieItem.tsx';
 
     interface Props {
         onSubmit: (movie: Movies) => void;
@@ -14,11 +14,11 @@
         });
 
         const randomId = `${Date.now()}`;
-        const inputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
             setMovie((prevState) => ({
                 ...prevState,
                 id: randomId,
-                name: e.target.value }));
+                name: event.target.value }));
         };
 
         const onFormSubmit = (e:React.FormEvent) => {
