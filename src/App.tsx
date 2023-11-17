@@ -1,7 +1,7 @@
 import Toolbar from './components/Toolbar/Toolbar.tsx';
+import JokesBox from './components/JokesBox/JokesBox.tsx';
 import MovieForm from './components/MovieForm/MovieForm.tsx';
 import { useState } from 'react';
-
 
 function App() {
     const [showTaskOne, setShowTaskOne] = useState(false);
@@ -22,20 +22,20 @@ function App() {
             </header>
             <main>
                 <div className="MainBoxTask d-flex align-items-center justify-content-around ">
-                    <div className="TaskOneMain d-flex flex-column">
-                        <button className="btn btn-primary mt-5 " onClick={() => visabilityTaskOne()}>
+                    <div className="TaskOneMain d-flex align-items-center flex-column">
+                        <button className="btn btn-primary mt-5 w-75" onClick={() => visabilityTaskOne()}>
                             Show first Task
                         </button>
-                        <div className="TaskOne border border-black p-4 mt-2" style={{ visibility: showTaskOne ? 'hidden' : 'visible' }}>
+                        <div className="TaskOne border border-black p-4 mt-2" style={{ visibility: showTaskOne ? 'visible' : 'hidden' }}>
                             <MovieForm onSubmit={() => {}} />
                         </div>
                     </div>
-                    <div className="TaskTwoMain d-flex flex-column">
-                        <button className="btn btn-primary mt-5" onClick={() => visabilityTaskTwo()}>
-                            Show second task
+                    <div className="TaskTwoMain d-flex align-items-center flex-column">
+                        <button className="btn btn-primary mt-5 w-75" onClick={() => visabilityTaskTwo()}>
+                            Show second Task
                         </button>
-                        <div className="TaksTwo border border-black mt-2" style={{ visibility: showTaskTwo ? 'hidden' : 'visible' }}>
-                            <span>Test Show Task one</span>
+                        <div className="TaksTwo border border-black mt-2" style={{ visibility: showTaskTwo ? 'visible' : 'hidden' }}>
+                           <JokesBox />
                         </div>
                     </div>
                 </div>
